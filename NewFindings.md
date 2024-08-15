@@ -26,6 +26,7 @@ The code is a URL-encoded string.
 
 %0D represents a carriage return (CR).
 %0A represents a line feed (LF).
+
 The combination of above both will start content with new line
 
 
@@ -54,5 +55,6 @@ SWITCH(
     )
 ```
 Create a measure and map it accordingly to the order that is created in the table (refer image)
+
 Youtube Video Link - https://www.youtube.com/watch?v=3VYiffIgn-E
 
