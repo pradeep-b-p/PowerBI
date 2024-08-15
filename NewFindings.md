@@ -1,6 +1,6 @@
 # PowerBI
 
-Category - Email / html / DAX 
+Category - Email / html / URL encoding /DAX 
 1. To open an email client with a prebuilt message from a Power BI web report, you can use a DAX measure to create a "mailto" hyperlink. Here's an example of how you might set up the measure:
 
 ```plaintext
@@ -31,4 +31,28 @@ The combination of above both will start content with new line
 
 #
 
-2. To do something
+Category - DAX / Matrix_Visual 
+2. Matrix having values built on DAX measure that corresponds to the Row and Column
+
+![alt text](image.png)
+
+```plaintext
+KPI_Track = 
+SWITCH(
+    TRUE(),
+    SELECTEDVALUE(Track[Order])=1,
+    FORMAT([1a.Host_Name_Available],"#"
+    ),
+    SELECTEDVALUE(Track[Order])=2,
+    FORMAT(DIVIDE([1a.Host_Name_Available],[Toatl_Count]),"00.00%"
+    ),
+    SELECTEDVALUE(Track[Order])=3,
+    FORMAT([1b.Host_Name_Missing],"#"
+    ),
+    SELECTEDVALUE(Track[Order])=4,
+    FORMAT(DIVIDE([1b.Host_Name_Missing],[Toatl_Count]),"00.00%")
+    )
+```
+Create a measure and map it accordingly to the order that is created in the table (refer image)
+Youtube Video Link - https://www.youtube.com/watch?v=3VYiffIgn-E
+
